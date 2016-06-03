@@ -1,7 +1,12 @@
 var multer  = require("multer");
 var path = require("path");
+var fs = require("fs");
 
 var imgUploadPath = path.join(__dirname, "../../public/uploads");
+
+if (!fs.existsSync(imgUploadPath)){
+    fs.mkdirSync(imgUploadPath);
+}
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
