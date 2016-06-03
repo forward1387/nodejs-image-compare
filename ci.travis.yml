@@ -1,4 +1,11 @@
+branches:
+only:
+    - master
 language: node_js
 node_js:
-  - "5"
-script: npm start  
+    - "5"
+before_script:
+    - cd nodejs-image-compare/
+    - npm install
+script: 
+    - npm start  
